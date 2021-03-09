@@ -24,7 +24,7 @@ namespace Sitecore.Cognitive.Translator.PSE.Extensions
         {
             var res = await _translatorService.GetTranslatation(input, fromLang, destLang, textType);
 
-            if (res != null && res.Any())
+            if (res != null && res.Any() && res[0].Translations.Any())
             {
                 return res[0].Translations[0].Text;
             }
